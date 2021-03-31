@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <div class="navbar" class="d-flex">
+    <p><%= link_to "Simple Airbnb!", flats_path %></p>
+     <p><%= link_to "Add a flat", new_flat_path %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

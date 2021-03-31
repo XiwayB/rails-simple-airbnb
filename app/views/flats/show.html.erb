@@ -1,0 +1,33 @@
+<div class="banner">
+  <% if @flat.url.nil? %>
+    <%= image_tag "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2040&q=80", alt: "alttext" %>
+  <% else %>
+    <%= image_tag @flat.url, alt: "flat photo", class: "image" %>
+  <% end %>
+</div>
+
+<div class="container">
+
+<div class="cards">
+  <div class="card-title">
+    <h2> <%= @flat.name %> </h2>
+    <p> <%= @flat.address %> </p>
+  </div>
+
+  <div class="card-description">
+    <h3>A bit more about this flat...</h3>
+    <p> <%= @flat.description %> </p>
+  </div>
+
+  <div class="card-detail">
+    <h3>Details</h3>
+    <p> Capacity: <%= @flat.number_of_guests %> people </p>
+    <p> Price: <%= @flat.price_per_night %>€</p>
+  </div>
+
+  <div class="buttons">
+    <%= link_to "Edit", edit_flat_path, class: "btn btn-primary" %>
+    <%= link_to "Delete", flat_path, class: "btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"} %>
+  </div>
+  </div>
+</div>
